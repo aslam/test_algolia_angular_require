@@ -54,7 +54,7 @@ group :development do
   gem 'rails-dev-tweaks', '~> 0.6.1' # avoids loading ruby classes for an asset request in development
 end
 
-group :staging, :production, :"development-blr", :"development-nyc", :"pre-production"  do
+group :staging, :production do
   gem 'unicorn'
   gem 'syslogger'
 end
