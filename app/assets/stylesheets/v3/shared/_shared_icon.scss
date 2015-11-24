@@ -1,0 +1,35 @@
+.show_tips_icon {
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+       &:before {
+            content: '';
+            @include retina-ready-sprites(v3/shared/event_account, png, 83, 72);
+            background-repeat: no-repeat;
+            width: 14px;
+            height: 12px;
+            display: block;
+            background-position: 0 -60px;
+        }
+        &:after {
+            content: attr(data-description);
+            max-width: 285px;
+            font: 13px/18px $font-bold;
+            background: #262626;
+            border-radius: 3px;
+            color: #FFFFFF;
+            position: absolute;
+            display: block;
+            padding: 13px 10px 10px 15px;
+            width: 285px;
+            z-index: 1;
+            top: -10px;
+            left: 25px;
+            display: none;
+        }
+        &:hover {
+            &:after {
+                display: block;
+            }
+        } 
+}

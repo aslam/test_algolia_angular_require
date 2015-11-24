@@ -1,0 +1,165 @@
+/*Slides.js Styling*/
+
+#slider_container {
+	width:626px;
+	height:335px;
+	padding:10px;
+	margin:0 auto;
+	position:relative;
+	z-index:0;
+	background: #f5f5f5;
+	@include border-radius(5px);
+	border: 1px solid #cbcbcb;
+	&.large {
+		height: 680px;
+	}
+}
+#slider_frame {
+	position:absolute;
+	z-index:0;
+	width:646px;
+	height:323px;
+	top:0px;
+	left:0px;
+	display:block;
+}
+
+#slider_slides {
+	position:absolute;
+	top:5px;
+	left:5px;
+	z-index:100;
+}
+
+.slides_container {
+	width:636px;
+	height:313px;
+	overflow:hidden;
+	position:relative;
+	display:none;
+	&.large {
+		height: 650px;
+	}
+}
+
+.slides_container a {
+	width:636px;
+	height:323px;
+	display:block;
+}
+.slides_container a img, .slides_container img {
+	display:block;
+}
+.slides_container div {
+    width: 636px;
+    height:auto;
+    display:block;
+    h4 {
+    	margin: 15px 0 0 30px;
+    	line-height: 45px;
+    	img {
+    		float: left;
+    		margin: 0 10px 0 0;
+    	}
+    }
+}
+
+/*Previous/Next Buttons*/
+
+#slider_slides .slideNext,#slider_slides .slidePrev {
+	position:absolute;
+	top:138px;
+	left:13px;
+	width:34px;
+	height:34px;
+	display:block;
+	z-index:101;
+	@include opacity(0);
+}
+
+#slider_slides .slideNext {
+	left:590px;
+}
+
+#slider_slides:hover .slideNext, #slider_slides:hover .slidePrev {
+	@include opacity(1);; //show buttons on hover
+	-webkit-transition: opacity .3s ease-in-out 0s; 
+}
+
+#slider_slides .slideNext img, #slider_slides .slidePrev img {
+	display: none;
+}
+
+#slider_slides .slideNext {
+	background-image: asset-url('slider/arrow.png', image);
+}
+
+#slider_slides .slidePrev {
+	background-image: asset-url('slider/arrow.png', image);
+	background-position: 34px 0;
+}
+
+#slider_slides .slideNext:hover {
+	background-image: asset-url('slider/arrow.png', image);
+	background-position: 0 -34px;
+}
+
+#slider_slides .slidePrev:hover {
+	background-image: asset-url('slider/arrow.png', image);
+	background-position: 34px -34px;
+}
+
+#slider_slides .slideNext:active {
+	background-image: asset-url('slider/arrow.png', image);
+	background-position: 0 -68px;
+}
+
+#slider_slides .slidePrev:active {
+	background-image: asset-url('slider/arrow.png', image);
+	background-position: 34px -68px;
+}
+
+/*Pagination*/
+
+.pagination {
+	margin:10px 0;
+	width: auto;
+	text-align: center;
+}
+
+.pagination li {
+	display: inline-block;
+	margin:0 1px;
+	list-style:none;
+}
+
+.pagination li a {
+	display:block;
+	width:12px;
+	height:0;
+	padding-top:12px;
+	background-image: asset-url('slider/pagination.png', image);
+	background-position:0 0;
+	float:left;
+	overflow:hidden;
+}
+
+.pagination li a:hover {
+	background-position: 0 -38px;
+}
+
+.pagination li a:active {
+	background-position: 0 -50px;
+}
+
+.pagination li.current a {
+	background-position: 0 -12px;
+}
+
+.pagination li.current a:hover {
+	background-position: 0 -25px;
+}
+
+.pagination li.current a:active {
+	background-position: 0 -62px;
+}

@@ -1,0 +1,95 @@
+.instant_search_wrapper {
+    @extend %vertical-align-middle;
+    position: relative;
+}
+
+.instant_search_label {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 100%;
+    &:before {
+        content: '';
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        left: 60px;
+        top: 7px;
+        cursor: pointer;
+        display: inline-block;
+        @include retina-ready-sprites(v3/shared/header_sprite, png, 37, 16);
+        @include transition(left .2s ease-out);
+    }
+}
+.mobile_search_icon {
+   @include retina-ready-sprites(v3/shared/header_sprite, png, 37, 16);
+   float: right;
+   width: 16px;
+   height: 16px;
+   cursor: pointer; 
+   margin: 20px 35px 0 0;
+   display: none;
+}
+.instant_search {
+    width: 210px;
+    height: 34px;
+    background-color: #000000;
+    border: 1px solid rgba(210, 210, 210, 0.3);
+    @include border-radius(20px);
+    color: $color3;
+    font: 14px/30px $font-bold;
+    padding-left: 30px;
+    padding-right: 10px;
+    text-indent: 60px;
+    @include transition(text-indent .2s ease-out);
+}
+
+@media screen and (min-width : 768px) {
+    .instant_search {
+        &:active, &:focus, &.active {
+            text-indent: 5px;
+            + {
+                .instant_search_label {
+                    &:before {
+                        left: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width : 767px) {
+    .instant_search_wrapper {
+        width: 100%;
+        height: 50px;
+        position: absolute;
+        top: 55px;
+        left: 0;
+        background-color: $color1;
+        border-top: 1px solid #181818;
+        display: none;
+        &.open {
+            display: block;
+        }
+    }
+    .instant_search {
+        width: 95%;
+        position: relative;
+        top: 8px;
+        @include border-radius(5px);
+        text-indent: 15px;
+    }
+    .instant_search_label {
+        &:before {
+            left: 30px;
+            top: 15px;
+        }
+    }
+    .mobile_search_icon {
+        display: block;
+        &.active {
+            background-position-x: -21px;
+        }
+    }
+}

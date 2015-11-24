@@ -1,0 +1,32 @@
+<div class="event_card" ng-repeat="event in account.events | orderBy:sortPredicate:reverseSort | filter:searchParam:strictSearch">
+    <a href="#" class="event_card_image" ng-class="{'icon icon_private': !event.is_public}">
+        <span ng-class="event.status"></span>
+        <div class="event_thumbnail_wrapper">
+            <img class="" ng-src="{{ event.logo | thumbnailImageUrl }}" />
+        </div>
+    </a>
+    <div class="event_details_wrapper">
+        <a href="#" class="event_card_title">{{::event.full_name}}</a>
+        <a href="#" class="event_card_expiryTime">{{event.start_time | formatDatetime: 'start' }}</a>
+        <div class="event_card_info">
+            <a href="#" class="event_info_title icon icon_posts pull_left">
+                <ng-pluralize count="event.feed.total || 0"
+                    when=" { '1': '1 Post',
+                        'other': '{} Posts' }">
+                </ng-pluralize>
+            </a>
+            <a href="#" class="event_info_title icon icon_viewers pull_left">{{event.viewer_count || 0}}</a>
+            <a href="#" class="event_card_settings pull_right" ng-if="isOwner" ng-class="{'hide' : !isOwner}"
+            data-toggle-dropdown data-show-class="show" data-toggle-element=".js-settings_modal{{$index}}"></a>
+            <a href="#" class="icon icon_upload pull_right"></a>
+        </div>
+        <div class="js-settings_modal{{$index}} hide" ng-if="isOwner">
+            <div class="event_settings_modal">
+                <ul>
+                    <li>EDIT</li>
+                    <li>DELETE</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

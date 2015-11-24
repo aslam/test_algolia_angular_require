@@ -1,0 +1,213 @@
+.icon {
+    &:before {
+        @include retina-ready-sprites(v3/account/account_sprite, png, 81, 175);
+        background-repeat: no-repeat;
+        content: '';
+    }
+    &.icon_upload_bold {
+        &:before {
+            background-position: 0 8px;
+            width: 16px;
+            height: 30px;
+            display: inline-block;
+            position: absolute;
+            left: 12px;
+            top: -1px;
+        }
+    }
+    &.icon_upload {
+        &:before {
+            background-position: 0 -25px;
+            width: 20px;
+            height: 25px;
+            display: inline-block;
+            vertical-align: baseline;
+            margin-right: 4px;
+        }
+    }
+    &.icon_posts {
+        &:before {
+            background-position: -20px 0;
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+    }
+    &.icon_viewers {
+        &:before {
+            background-position: -18px -25px;
+            width: 25px;
+            height: 25px;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+    }
+    &.icon_calendar {
+        &:before {
+            background-position: -45px 0;
+            width: 32px;
+            height: 30px;
+        }
+    }
+    &.icon_private {
+        &:before {
+            background-position: -45px -31px;
+            width: 34px;
+            height: 34px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            z-index: 1;
+        }
+    }
+    &.icon_settings {
+        &:before {
+            background-position: 0 -49px;
+            width: 21px;
+            height: 22px;
+        }
+    }
+    &.icon_settings_persona {
+        &:before {
+            background-position: -25px -73px;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            left: 20px;
+            top: 13px;
+        }
+        &.selected {
+            &:before {
+                background-position: -2px -74px;
+                width: 16px;
+                height: 16px;
+                position: absolute;
+                left: 20px;
+                top: 13px;
+            }
+        }
+    }
+    &.icon_settings_password {
+        &:before {
+            background-position: -65px -74px;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            left: 20px;
+            top: 14px;
+        }
+        &.selected {
+            &:before {
+                background-position: -45px -74px;
+                width: 16px;
+                height: 16px;
+                position: absolute;
+                left: 20px;
+                top: 14px;
+            }
+        }
+    }
+    &.icon_settings_notifications {
+        &:before {
+            background-position: -63px -95px;
+            width: 17px;
+            height: 17px;
+            position: absolute;
+            left: 20px;
+            top: 13px;
+        }
+        &.selected {
+            &:before {
+                background-position: -45px -95px;
+                width: 17px;
+                height: 17px;
+                position: absolute;
+                left: 20px;
+                top: 13px;
+            }
+        }
+    }
+    &.icon_settings_plans {
+        &:before {
+            background-position: -24px -117px;
+            width: 16px;
+            height: 16px;
+            position: absolute;
+            left: 20px;
+            top: 14px;
+        }
+        &.selected {
+            &:before {
+                background-position: -2px -117px;
+                width: 16px;
+                height: 16px;
+                position: absolute;
+                left: 20px;
+                top: 14px;
+            }
+        }
+    }
+    &.icon_settings_billing {
+        &:before {
+            background-position: -25px -141px;
+            width: 16px;
+            height: 11px;
+            position: absolute;
+            left: 20px;
+            top: 17px;
+        }
+        &.selected {
+            &:before {
+                background-position: -2px -141px;
+                width: 16px;
+                height: 11px;
+                position: absolute;
+                left: 20px;
+                top: 17px;
+            }
+        }
+    }
+    &.icon_settings_devices {
+        &:before {
+            background-position: -65px -117px;
+            width: 17px;
+            height: 18px;
+            position: absolute;
+            left: 20px;
+            top: 13px;
+        }
+        &.selected {
+            &:before {
+                background-position: -45px -117px;
+                width: 17px;
+                height: 18px;
+                position: absolute;
+                left: 20px;
+                top: 13px;
+            }
+        }
+    }
+    &.icon_settings_advanced {
+        &:before {
+            background-position: -65px -138px;
+            width: 17px;
+            height: 16px;
+            position: absolute;
+            left: 20px;
+            top: 13px;
+        }
+        &.selected {
+            &:before {
+                background-position: -45px -138px;
+                width: 17px;
+                height: 16px;
+                position: absolute;
+                left: 20px;
+                top: 13px;
+            }
+        }
+    }
+}

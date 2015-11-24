@@ -1,0 +1,42 @@
+<div class="header_panel" >
+    <div class="header_content_wrapper">
+        <div class="header_content_container">
+            <img src="//cdn.blahblah.com/website/discover/blank_avatar.png" class="header_account_poster" ng-src="{{::account.picture.small_url}}" />
+            <div class="header_account_info">
+                <div class="header_account_name">{{::account.full_name}}</div>
+                <div class="header_account_description">
+                    <span class="header_account_description_main js-header_account_description"
+                        data-ng-bind="account.description"
+                        data-ellipsis data-ellipsis-append="Read More"
+                        data-ellipsis-append-click="loadMoreDescription()"
+                        read-more-description>
+                        {{::account.description}}
+                    </span>             
+                </div>
+            </div>
+            <div class="header_buttons">
+                <a href="#" class="header_icon_upload_container icon icon_upload_bold"></a>
+                <a href="#" class="button btn_followership_state btn_follow" ng-hide="isOwner"></a>
+            </div>
+            <div class="header_account_details">
+                <a class="header_account_details_items">
+                    <pluralize-with-html count="::account.events_count"
+                        when="{ '1': '<span class=account_detail_num>1</span> Event',
+                                'other': '<span class=account_detail_num>{}</span> Events' }">
+                    </pluralize-with-html>
+                </a>
+                <a class="header_account_details_items">
+                    <pluralize-with-html count="::account.followers.total"
+                        when="{ '1': '<span class=account_detail_num>1</span> Follower',
+                                'other': '<span class=account_detail_num>{}</span> Followers'}">
+                    </pluralize-with-html>
+                </a>
+                <a class="header_account_details_items">
+                    <pluralize-with-html count="::account.following.total"
+                        when="{'other': '<span class=account_detail_num>{}</span> Following'}">
+                    </pluralize-with-html>
+                </a>
+            </div>
+        </div>
+    </div>  
+</div>

@@ -1,0 +1,103 @@
+.create_event_modal {
+    width: 360px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    @include box-shadow(0px 1px 0px 0px rgba(0,0,0,0.10));
+    @include transform2d(translate(-50%, -50%));
+    background-color: #ffffff;
+    @include border-radius(5px);
+    -webkit-font-smoothing: antialiased;
+
+}
+.create_event_header {
+    width: 100%;
+    background: #F4F4F4;
+     @include border-radius(5px 5px 0 0);
+    h2 {
+        height: 90px;
+        @include box-shadow(0px 1px 0px 0px rgba(0,0,0,0.10));
+        text-align: center;
+        font: 28px/90px $font-bold;
+    }
+    .modal_close_icon {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+    }
+}
+
+.create_event_fields {
+    padding: 10px 40px 35px;
+    label {
+        display: block;
+        margin-top: 30px;
+        margin-bottom: 10px;
+        font: 15px/18px $font-extra-bold;
+        color: #262626;
+        position: relative;
+        &.dash {
+            &:after {
+                content: '-';
+                position: absolute;
+                font: 15px/36px $font-bold;
+                color: #666666;
+                left: 155px;
+                top: 28px;
+            }
+        }
+        &.start_date_label {
+            &:before {
+                content: attr(data-timezone);
+                font: 11px/15px $font-bold;
+                color: #999999;
+                position: absolute;
+                right: 0;
+                top: 0;
+            }
+        }
+    }
+    input {
+        font: 16px/19px $font-bold;
+        background: #FFFFFF;
+        border: 1px solid #D9D9D9;
+        @include border-radius(2px);
+        color: #AAAAAA;
+        height: 36px;
+        padding-left: 10px;
+        &.wider {
+            width: 100%;
+        }
+        &.medium {
+            width: 150px;
+            float: left;
+        }
+    }
+    .time_picker_wrapper {
+        float: right;
+        width: 110px;
+        .time_field {
+            width: 100%;
+        }
+    }
+    .create_event_button {
+        display: block;
+        color: #ffffff;
+        font: 14px/40px $font-extra-bold;
+        margin-top: 45px;
+        width: 100%;
+        border: none;
+        cursor: pointer;
+        letter-spacing: 1px;
+    }
+    .date_time_field {
+        position: relative;
+        @extend %clearfix;
+        .pika-single {
+            position: absolute;
+            left: 0;
+            top: 42px;
+        }
+    }
+}

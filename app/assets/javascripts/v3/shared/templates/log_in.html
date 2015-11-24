@@ -1,0 +1,17 @@
+<div class="login_me_dropdown">
+    <a href="/session/new" class="header_login_link" ng-if="!is_logged_in">LOG IN</a>
+    <div  ng-if="is_logged_in" class="my_account_dropdown">
+        <img data-toggle-dropdown data-show-class="open" data-hide-class="close"
+            data-toggle-element=".js-account-dropdown" class="header_user_avatar"
+            alt="avatar" ng-src="{{ ::user_picture_url | stripProtocol }}"/>
+        <ul class="account_dropdown js-account-dropdown">
+            <li><a href="{{ ::profile_url }}">MY ACCOUNT</a></li>
+            <li><a href="/my_account/edit">SETTINGS</a></li>
+            <li><a href="/analytics">ANALYTICS</a></li>
+            <li><a href="//help.blahblah.com">HELP</a></li>
+            <li><a href="">LIVE VIDEO TOOLS</a></li>
+            <li><a href="/logout">LOG OUT</a></li>
+            <li><a href="" class="button primary_button" data-toggle-dropdown data-show-class="open" data-hide-class="close" data-active-name="active" data-toggle-element=".js-create_event_modal" data-no-hide-on-popup-click="true" data-close-class="modal_close_icon">CREATE EVENT</a></li>
+        </ul>
+    </div>
+</div>

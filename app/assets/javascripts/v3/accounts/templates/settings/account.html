@@ -1,0 +1,35 @@
+<h1 class="content_header">Account Settings</h1>
+<div class="edit_info">
+    <div class="fields">
+        <p>Name</p>
+        <input type="text" value="{{account.full_name}}"  />
+    </div>
+    <div class="fields">
+        <p>Email Address</p>
+        <input type="text" value="{{account.email}}" />
+    </div>
+    <div class="fields">
+        <p class="help">Profile URL</p>
+        <input type="text" value="" />
+    </div>
+    <div class="fields">
+        <p>Time Zone</p>
+        <input type="text" value="{{account.timezone}}" />
+    </div>
+    <div class="fields">
+        <p>Account Description
+            <span class="char_limit">500 Characters Max</span>
+        </p>
+        <div contentEditable="true" class="edit_box">{{account.description}}</div>
+    </div>
+    <div class="fields account_connections">
+        <p>Account Connections</p>
+        <div class="connections_container">
+            <a href="#" class="button btn_connections connected pull_right"></a>
+        </div>
+    </div>
+</div>
+<div class="footer_links">
+    <a href="#" class="button btn_save_big"></a>
+    <a href="#" class="delete_account_link pull_right">Delete Account</a>
+</div>

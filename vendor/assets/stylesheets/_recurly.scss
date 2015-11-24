@@ -1,0 +1,711 @@
+.recurly {
+}
+.recurly .cost,
+.recurly .discount {
+  font-size: 16px;
+  text-align: right;
+}
+.recurly .subscription {
+  border-radius: 9px 9px 0 0;
+  text-shadow: 0 1px 0 #fff;
+  padding-top: 20px;
+  overflow: hidden;
+  visibility: hidden;
+  height:0;
+  padding:0;
+  margin-right:0;
+  line-height:0;
+}
+.recurly .plan {
+  color: #333;
+  overflow: hidden;
+  position: relative;
+  zoom: 1;
+}
+.recurly .plan .name {
+  float: left;
+  font-size: 32px;
+  min-width: 200px;
+  padding-left: 20px;
+  padding-right: 40px;
+}
+.recurly .plan .quantity.field {
+  clear: none;
+  width: 60px;
+  margin: 4px 0;
+}
+.recurly .plan .quantity.field input[type=text] {
+  width: 48px;
+}
+.recurly .plan .quantity.field:before {
+  content: "\d7";
+  height: 48px;
+  line-height: 30px;
+  position: absolute;
+  right: 100%;
+  width: 40px;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+  z-index: 1337;
+  color: #666;
+}
+.recurly .plan .recurring_cost {
+  float: right;
+  text-align: right;
+  padding-right: 20px;
+}
+.recurly .plan .recurring_cost .cost {
+  font-size: 32px;
+}
+.recurly .plan .recurring_cost .interval {
+  font-size: 12px;
+  padding-bottom: 20px;
+}
+.recurly .free_trial {
+  clear: left;
+  float: left;
+  font-size: 13px;
+  height: 22px;
+  margin: 0;
+  position: absolute;
+  top: 35px;
+  left: 20px;
+  font-style: italic;
+}
+.recurly .setup_fee {
+  clear: both;
+  overflow: hidden;
+  padding-top: 20px;
+}
+.recurly .setup_fee .title {
+  float: left;
+  padding-left: 20px;
+  font-weight: bold;
+  font-size: 16px;
+}
+.recurly .setup_fee .cost {
+  float: right;
+  padding-right: 20px;
+}
+.recurly .vat {
+  height: 24px;
+  padding: 20px 20px;
+  display: none;
+}
+.recurly .vat.applicable {
+  display: block;
+}
+.recurly .vat .title {
+  font-size: 16px;
+  font-weight: normal;
+  float: left;
+}
+.recurly .vat .cost {
+  float: right;
+  font-size: 18px;
+}
+.recurly .add_ons {
+  clear: both;
+}
+.recurly .add_ons.any {
+  margin: 20px 10px;
+}
+.recurly .add_ons .add_on {
+  background: #ecedee;
+  background: -webkit-linear-gradient(top, #ecedee, #e5e6e7);
+  background: -moz-linear-gradient(top, #ecedee, #e5e6e7);
+  background: -o-linear-gradient(top, #ecedee, #e5e6e7);
+  background: linear-gradient(top, #ecedee, #e5e6e7);
+  margin: 0;
+  height: 43px;
+  line-height: 42px;
+  vertical-align: middle;
+  position: relative;
+  clear: both;
+  overflow: hidden;
+  border-top: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  text-shadow: 0 1px 0 #fff;
+  color: #999;
+  font-weight: 300;
+  font-size: 16px;
+  zoom: 1;
+  cursor: default;
+}
+.recurly .add_ons .add_on.first {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.recurly .add_ons .add_on.last {
+  border-bottom: 1px solid #ccc;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.recurly .add_ons .add_on .name {
+  font-size: inherit;
+  font-weight: inherit;
+  font-style: italic;
+  color: inherit;
+  width: 200px;
+  margin-left: 9px;
+  margin-right: 20px;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.recurly .add_ons .add_on .quantity.field {
+  position: absolute;
+  top: 4px;
+  left: 249px;
+  width: 60px;
+  display: none;
+}
+.recurly .add_ons .add_on .quantity.field input[type=text] {
+  width: 48px;
+}
+.recurly .add_ons .add_on .quantity.field:before {
+  content: "\d7";
+  height: 48px;
+  line-height: 30px;
+  position: absolute;
+  right: 100%;
+  width: 40px;
+  font-size: 20px;
+  text-align: center;
+  vertical-align: middle;
+  z-index: 1337;
+  color: #666;
+}
+.recurly .add_ons .add_on .cost {
+  font-size: inherit;
+  line-height: inherit;
+  vertical-align: middle;
+  position: absolute;
+  right: 10px;
+}
+.recurly .add_ons .add_on:hover {
+  background: -webkit-linear-gradient(top, #f0f0f0 0%, #dfdfdf 50%, #d5d5d5 50%, #e0e0e0 100%);
+  background: -moz-linear-gradient(top, #f0f0f0 0%, #dfdfdf 50%, #d5d5d5 50%, #e0e0e0 100%);
+  background: -o-linear-gradient(top, #f0f0f0 0%, #dfdfdf 50%, #d5d5d5 50%, #e0e0e0 100%);
+  background: linear-gradient(top, #f0f0f0 0%, #dfdfdf 50%, #d5d5d5 50%, #e0e0e0 100%);
+  box-shadow: inset 0 1px 0 #fff;
+  text-shadow: none;
+  color: #111;
+}
+.recurly .add_ons .add_on:active,
+.recurly .add_ons .add_on.selected {
+  color: #111;
+  background: -webkit-linear-gradient(top, #f0f0f0, #fff);
+  background: -moz-linear-gradient(top, #f0f0f0, #fff);
+  background: -o-linear-gradient(top, #f0f0f0, #fff);
+  background: linear-gradient(top, #f0f0f0, #fff);
+  width: auto;
+  box-shadow: inset 0 1px 4px 0 rgba(0,0,0,0.07);
+  text-shadow: none;
+}
+.recurly .add_ons .add_on.selected {
+}
+.recurly .add_ons .add_on.selected .name {
+  padding-left: 24px;
+}
+.recurly .add_ons .add_on.selected:hover {
+}
+.recurly .add_ons .add_on.selected .quantity {
+  display: block;
+}
+.recurly .total_amount {
+  border-top: 1px solid #dedede;
+  clear: both;
+  @extend %clearfix;
+}
+.recurly .total_amount div{
+  width: 203px;
+  float: left;
+  margin-top: 28px;
+  margin-bottom: 35px;
+  text-align: center; 
+  font-family: $font-normal; 
+  font-size: 12px;
+  color: #666;
+}
+.recurly .total_amount .per_month{
+  border-right: 1px solid #c0c6cc;
+}
+.recurly .total_amount .charge_per_month, .recurly .total_amount .total_commitment {
+  font-size: 32px;
+  color: #333333;
+  margin-bottom: 9px;
+}
+.recurly .voucher {
+  clear: both;
+}
+.recurly .coupon {
+  clear: both;
+  overflow: hidden;
+  height: 37px;
+  color: #333;
+  padding: 20px 20px 20px 0;
+  position: relative;
+}
+.recurly .coupon .check {
+}
+.recurly .coupon .check:hover {
+}
+.recurly .coupon .check:active {
+}
+.recurly .coupon.checking .check {
+  box-shadow: inset 0 3px 3px 0 rgba(0,0,0,0.03);
+  border: 1px solid #999;
+}
+.recurly .coupon.invalid .discount {
+    &:after {
+      color: #CF202E;
+      content: "X";
+      font-family: helvetica;
+      font-size: 16px;
+      font-weight: bold;
+      margin-left: 36px;
+      position: relative;
+      right: 10px;
+  }
+}
+.recurly .coupon.checking .discount{
+    &:after {
+      content: "" !important;
+      font-family: helvetica;
+      font-size: 12px;
+      font-weight: normal;
+      position: relative;
+      right: 10px;
+      height: 16px;
+      width: 16px;
+      top: 3px;
+      display: inline-block !important;
+      background: asset-url('loading-16x16.gif',image) no-repeat;
+  }
+}
+.recurly .coupon.invalid .coupon_code {
+  border-color: #eeb1b1;
+  background: #FFF;
+  color: #311;
+  height: 30px;
+  .coupon_error{
+    display: none;
+  }
+}
+.recurly .coupon .coupon_code .error {
+  left: 300px;
+  height:10px;
+}
+.recurly .coupon .description {
+  float: left;
+  margin-left: 20px;
+  height: 34px;
+  line-height: 34px;
+  vertical-align: middle;
+  font-size: 14.4px;
+}
+.recurly .coupon .discount {
+  height: 34px;
+  line-height: 40px;
+  vertical-align: middle;
+  height:0;
+  padding: 0;
+  margin:0;
+  position: absolute;
+  right: 10px;
+  color: #6DC067;
+  font-family: $font-extra-bold;
+  font-size: 16px;
+}
+.recurly .coupon.valid .discount:after {
+  @include icon(check);
+  margin-left: 11px;
+  display: inline;
+}
+.recurly .error {
+  color:#ea7680;
+}
+.recurly .server_errors {
+}
+.recurly .server_errors .error {
+  padding-left: 26px;
+ 
+}
+.recurly .server_errors.any {
+  @include opacity(1);
+  -webkit-transition: opacity 0.5s linear;
+  -moz-transition: opacity 0.5s linear;
+  margin: 30px 30px 20px 30px;
+  margin-bottom: 0;
+  text-align:left;
+
+}
+.recurly .contact_info,
+.recurly .billing_info,
+.recurly .accept_tos {
+  position: relative;
+  overflow: hidden;
+  zoom: 1;
+  @extend %clearfix;
+}
+.recurly .contact_info .title,
+.recurly .billing_info .title,
+.recurly .accept_tos .title {
+  text-align: left;
+  padding: 25px 0 18px 0;
+  border-top: solid 1px #dedede;
+  clear: both;
+}
+.recurly .contact_info .credit_card,
+.recurly .billing_info .credit_card,
+.recurly .accept_tos .credit_card {
+  clear: both;
+}
+.recurly .contact_info {
+}
+.recurly .accept_tos {
+  overflow: visible;
+}
+.recurly .accept_tos input[type=checkbox] {
+  display: inline;
+  line-height: 34px;
+  vertical-align: middle;
+}
+.recurly .accept_tos label {
+  margin: 0 0 0 5px;
+  display: inline;
+  line-height: 34px;
+  vertical-align: middle;
+}
+.recurly .accept_tos .field .error {
+  display: block;
+  position: static;
+}
+.recurly .field {
+  display: block;
+  float: left;
+  margin-bottom: 20px;
+  position: relative;
+}
+.recurly .field.company_name {
+  margin-bottom: 0;
+}
+.recurly .field .error {
+    top: 0;
+    left: 100%;
+    z-index: 1337;
+    margin-top:1px;
+    color:#ea7680;
+    font-style:italic;
+    font-size:11px;
+    &.warning {
+      color: #404040;
+    }
+}
+.recurly .field .error {
+  z-index: 1337;
+  color:#ea7680;
+  font-style:italic;
+  font-size:11px;
+  position: absolute;
+  top: 41px;
+  left: 1px;;
+}
+.recurly .field .placeholder {
+  position: absolute;
+  top: 4px;
+  left: 3px;
+  bottom: 0;
+  padding-left: 9px;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: $font-bold;
+  line-height: 34px;
+  vertical-align: middle;
+  color: #bfbfbf;
+  cursor: text;
+  overflow: hidden;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.recurly .field {
+  height: 42px;
+}
+
+.recurly .field.focus {
+  height: 40px;
+}
+.recurly .field.focus .placeholder {
+  color: #bfbfbf !important;
+}
+.recurly .field.invalid .placeholder {
+  color: #a77;
+}
+.recurly .field.coupon_code {
+}
+.recurly .field.coupon_code input[type=text] {
+  
+  height:18px;
+  /*@include border-bottom-right-radius(0);
+  @include border-top-right-radius(0);*/
+}
+.recurly .field.first_name {
+  clear: left;
+}
+.recurly .field.first_name input[type=text] {
+  
+}
+.recurly .field.first_name .error {
+  
+}
+.recurly .field.last_name {
+  clear: none;
+}
+.recurly .field.last_name input[type=text] {
+}
+.recurly .field.card_number {
+}
+.recurly .field.card_number input[type=text] {
+}
+.recurly .field.card_number .error {
+
+}
+.recurly .field.cvv {
+  .error {
+    width: 44px;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}
+.recurly .field.cvv input[type=text] {
+  width: 48px;
+}
+.recurly .field.expires {
+}
+.recurly .field.expires input[type=text] {
+ 
+}
+.recurly .field.expires .title {
+  float: left;
+  font-size: 13px;
+  line-height: 24px;
+  vertical-align: middle;
+  width: 59px;
+}
+.recurly .field.expires .month {
+  float: left;
+  margin-left: 0;
+  margin-right:10px;
+}
+.recurly .field.expires .month input[type=text] {
+}
+.recurly .field.expires .year {
+  float: left;
+  margin-left: 1px;
+}
+.recurly .field.expires .year input[type=text] {
+
+}
+.recurly .field.state {
+ 
+}
+.recurly .field.state input[type=text] {
+
+}
+.recurly .field.state .error {
+ 
+}
+.recurly .field.zip {
+}
+.recurly .field.zip input[type=text] {
+
+}
+.recurly .field.vat_number {
+ 
+  display: none;
+}
+.recurly .field.vat_number input[type=text] {
+ 
+}
+.recurly .field.vat_number.applicable {
+  display: block;
+}
+.recurly .only_zipstreet .zip.field,
+.recurly .only_zip .zip.field {
+  margin-left: 0;
+  clear: left;
+}
+.recurly .accepted_cards {
+}
+.recurly .card {
+  background-position: right top;
+  background-repeat: no-repeat;
+  text-indent: -3000px;
+  width: 40px;
+  height: 30px;
+  margin: 0;
+  padding: 0;
+  float: left;
+}
+.recurly .card.mastercard {
+}
+.recurly .card.american_express {
+}
+.recurly .card.visa {
+}
+.recurly .card.discover {
+}
+.recurly .card.no_match {
+  @include opacity(0.5);
+}
+.recurly input[type=text],
+.recurly select {
+  vertical-align: middle;
+  color: #595959;
+  width: 174px;
+  border-radius: 3px;
+  font-family: $font-bold;
+  line-height: 19px;
+}
+
+.recurly input[type=text].invalid.warning{
+    border-color: #b6b6b6;
+    background: white;
+}
+
+.recurly input[type=text].invalid,
+.recurly select.invalid {
+  border-color: #eeb1b1;
+  background: #fff;
+  color: #311;
+}
+.recurly input[type=text] {
+}
+.recurly input[type=text][disabled] {
+  background: #eee;
+}
+.recurly input[type=checkbox] {
+  color: #f00;
+}
+.recurly select {
+  color: inherit;
+  font-family: inherit;
+  width: 100%;
+  height: 25px;
+  padding: 3px;
+}
+.recurly select > option {
+  color: inherit;
+}
+
+.recurly .due_now .title {
+  float: left;
+  font-size: 29px;
+  position: relative;
+}
+.recurly .due_now .cost {
+  color: #fff;
+  float: right;
+  font-size: 33px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 0;
+  position: relative;
+  text-shadow: 0px 1px 1px rgba(0,0,0,0.90);
+}
+.recurly .footer {
+}
+.recurly.submitting .footer {
+}
+.recurly button.submit {
+}
+.recurly button.submit:hover {
+}
+.recurly button.submit:active {
+}
+.recurly button.submit[disabled] {
+
+}
+.iefail {
+  background: #666;
+  padding: 10px;
+  position: absolute;
+  top: -1%;
+  left: -1%;
+  height: 102%;
+  width: 102%;
+  z-index: 9999;
+}
+.iefail .chromeframe {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.iefail .chromeframe p {
+  text-align: center;
+}
+.iefail .chromeframe p.blast {
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.iefail .chromeframe p a {
+  color: #4183c4;
+  text-transform: capitalize;
+}
+
+//update billing info section in settings page
+.recurly.update_billing_info {
+    min-height: 632px;
+    .billing_info {
+        .title {
+            border: none;
+            padding: 0;
+            margin-bottom: 10px;
+            clear: both;
+            display: block;
+            width: 100%;
+            float: none;
+            height: auto;
+        }
+        .credit_card {
+            @extend %clearfix;
+            .field {
+                margin-bottom: 10px;
+            }
+            .card_cvv {
+                @extend %clearfix;
+                .card_number {
+                    width: 300px;
+                    input {
+                        width: 276px;
+                    }
+                }
+                .cvv {
+                    margin-left: 10px;
+                }
+            }
+            .expires {
+                @extend %clearfix;
+                height: auto;
+            }
+        }
+        .accepted_cards {
+            .title {
+                font-weight: normal;
+                color: #bfbfbf;
+                font-size: 12px;
+            }
+        }
+        .address {
+            margin-top: 30px;
+            @extend %clearfix;
+        }
+    }
+}

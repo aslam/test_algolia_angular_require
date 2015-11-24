@@ -1,0 +1,16 @@
+<div class="js-account" ng-controller="AccountController">
+    <header class="header" ng-controller="AccountHeaderController">
+        <account-header></account-header>
+        <div owner-tabs class="tabs_wrapper" ng-if="isOwner"></div>
+    </header>
+    <section class="account_content_panel">
+        <div class="main_content_wrapper">
+            <div class="btn_add" ng-if="isOwner"></div>
+            <div ui-view></div>
+        </div>
+    </section>
+</div>
+<footer class="discover_events">
+    <%= render partial: '/layouts/footer' %>
+</footer>
+

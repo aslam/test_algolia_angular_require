@@ -1,0 +1,16 @@
+<header class="content_buttons">
+    <search-account-events></search-account-events>
+    <sort-account-events></sort-account-events>
+</header>
+<div class="account_content_row" infinite-scroll="loadMoreEvents()" threshold="100"
+can-load="allowEventsLoad">
+    <event-cards></event-cards>
+</div>
+<div ng-if="account.events_count > 9">
+    <a href="#" class="btn_load_more" ng-click="activateInfiniteScroll($event)">Load More</a>
+</div>
+<div ng-if="showEventLoader">
+    <preloader></preloader>
+</div>
+
+

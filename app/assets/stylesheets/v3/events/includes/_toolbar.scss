@@ -1,0 +1,150 @@
+.event_toolbar {
+    width: 100%;
+    height: 45px;
+    background: #111111;
+    @include flexbox-display-flex;
+    a {
+        text-decoration: none;
+    }
+    .event_icon {
+        width: 60px;
+        display: block;
+        float: left;
+        height: 100%;
+        @extend %vertical-aligner;
+        text-align: center;
+        position: relative;
+    }
+    .modal_close_icon {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        z-index: 2;
+    }
+}
+
+.event_status {
+    &:before {
+        height: 100%;
+        padding: 0 16px;
+        font: 16px/45px $font-super-bold-italic;
+        color: #FFFFFF;
+        letter-spacing: 1.33px;
+        text-shadow: 0px 1px 0px rgba(0,0,0,0.15);
+        display: inline-block;
+        -webkit-font-smoothing: antialiased;    
+        @extend %vertical-align-middle;
+    }
+    &.live {
+        &:before {
+            content: 'LIVE';
+            background-color: $highlight-color;
+        }
+    }
+    &.future, &.countdown{
+        &:before {
+            content: 'UPCOMING';
+            background-color: #444444;
+        }
+    }
+    &.in_progress {
+        &:before {
+            content: 'OFF AIR';
+            background-color: #444444;
+        }
+    }
+    &.past {
+        &:before {
+            content: 'ENDED';
+            background-color: #444444;
+        }
+    }
+    &.draft {
+        &:before {
+            content: 'DRAFT';
+            background-color: #444444;
+        }
+    }
+}
+.account_event_name {
+    margin-left: 20px;
+    font: 16px/45px $font-extra-bold;
+    color: #bbbbbb;
+    @extend %vertical-align-middle;
+    -webkit-font-smoothing: antialiased;
+    @include flexbox-flex(1);
+    @include ellipsis(100%); 
+}
+.toolbar_right_icons {
+    height: 100%;
+    display: inline-block;
+    @extend %vertical-aligner;
+    @extend %clearfix;
+    float: right;
+    .event_icon {
+        border-left: 1px solid rgba(210 ,210 ,210, 0.12);
+        border-bottom: 2px solid transparent;
+        &:hover, &.active {
+            border-bottom: 2px solid $highlight-color;
+        }
+    }
+    .like_icon, .share_icon {
+        border-left: none;
+        border-bottom: none;
+        &:hover {
+            border-bottom: none;
+        }
+    }
+    .publish_button {
+        background-color: #4185BE;
+        width: 118px;
+        display: inline-block;
+        position: relative;
+        vertical-align: top;
+        .publish_link {
+            font: 12px/45px $font-extra-bold;
+            display: block;
+            text-align: center;
+            color: #ffffff;
+            letter-spacing: 1px;
+            -webkit-font-smoothing : antialiased;
+        }
+    }
+    .ls_tooltip_text {
+        left: auto;
+        right: 10px;
+        @include transform(translateX(0));
+        width: 365px;
+    }
+}
+
+@media screen and (max-width : 767px) {
+    .event_toolbar {
+        margin-top: 45px;
+        position: relative;
+        display: block;
+    }
+    .account_event_name {
+        position: absolute;
+        top: -45px;
+        left: 0;
+        text-align: center;
+        background-color: #111111;
+        width: 100%;
+        margin-left: 0;
+        padding: 0 20px;
+        @include box-shadow(inset 0px -1px 0px 0px #292929);
+    }
+    .event_status {
+        &:before {
+            height: 16px;
+            font: 11px/17px $font-extra-bold-italic;
+            color: #FFFFFF;
+            letter-spacing: 0.91px;
+            padding: 0 5px;
+            top: 13px;
+            position: relative;
+            left: 20px;
+        }
+    }
+}

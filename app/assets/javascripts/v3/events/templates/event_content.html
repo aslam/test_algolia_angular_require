@@ -1,0 +1,126 @@
+
+<section class="event_content">
+<!--
+    <div class="event_section newly_created_event">
+        <div class="event_image_blur">
+            <div class="blur_poster_wrapper">
+                <img class="blur_poster" src="/assets/v3/events/new_event_bg.jpg"/>
+            </div>
+        </div>
+        <div class="event_details">
+            <div class="event_section_right">
+                <span class="image_update_icon"></span>
+                <div class="add_event_image"> </div>
+            </div>
+            <div class="event_section_left">
+                <div ng-switch="event_status">
+                    <span class="event_states" ng-switch-when="future">
+                        Starts {{ getFormattedStartTime() }}
+                    </span>
+                    <span class="event_states" ng-switch-when="past">
+                        Ended {{ getFormattedEndTime() }}
+                    </span>
+                    <div ng-switch-when="in_progress">
+                        <preloader>Waiting for event to go live.</preloader>
+                    </div>
+                    <div class="time_left" ng-switch-when="countdown" ng-init="startCoundown()">
+                        <span class="clock_icon event_icon"></span>
+                        {{ hour }}<span class="unit">HR</span>
+                        {{ minutes }}<span class="unit">MIN</span>
+                        {{ seconds }}<span class="unit">SEC</span>
+                    </div>
+                </div>
+                <div class="event_name">{{ ::eventData.full_name }}</div>
+                <div class="account_location">
+                    <div class="account_info">
+                        <img  ng-src="{{ ::eventData.owner.profilePicture('thumb_url') }}"/>
+                        {{ ::eventData.owner.full_name }}
+                    </div>
+                    <div class="event_location">
+                        <span class="location_pin_icon event_icon"></span>
+                        <a href="javascript:void(0)" class="add_location">Add Location</a>
+                    </div>
+                </div>
+                <div class="add_description">
+                    <a href="" class="add_description_link" data-toggle-dropdown data-show-class="open" data-hide-class="close" data-toggle-element=".js-add_event_description_modal"
+                    data-no-hide-on-popup-click="true" data-close-class="js-hide_modal">
+                        Add Description
+                    </a>
+                    <span class="ls_tooltip_text" data-tooltip-heading-text="CUSTOMIZE YOUR EVENT" data-tooltip-body-text="Add some details to give your viewers a full experience">
+                        <span class="top_Caret"></span>
+                        <span class="close_icon_medium grey_close"></span>
+                    </span>
+                </div>
+                <div class="modal_overlay js-add_event_description_modal js-hide_modal">
+                    <div class="modal_overlay_inner">
+                        <div class="add_event_description_modal">
+                            <div class="event_description_header">
+                                <a href="javascript:void(0)" class="js-hide_modal modal_close_icon grey_close"></a>
+                                <textarea class="description_field" placeholder="Add details about your event..."></textarea>
+                            </div>
+                            <div class="bottom_strip">
+                                <a href="javascript:void(0)" class="js-hide_modal cancel_description">Cancel</a>
+                                <a href="javascript:void(0)" class="save_description button info_button">save</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <a href="javascript:void(0)" class="image_update_icon ls_tooltip_parent">
+            <span class="ls_tooltip" data-tooltip-text="Edit Background"></span>
+        <a/>
+    </div>-->
+    <div class="event_section">
+        <div class="event_image_blur">
+            <div class="blur_poster_wrapper">
+                <img class="blur_poster" ng-src="{{ ::eventData.background.image.url }}"/>
+            </div>
+        </div>
+        <div class="event_details">
+            <div class="event_section_right">
+                <a class="ls_tooltip_parent image_update_icon" href="javascript:void(0)">
+                    <span class="ls_tooltip" data-tooltip-text="Add Event Poster"></span>
+                </a>
+                <img class="this_event_poster" ng-src="{{ ::eventData.poster('small_url') }}"/>
+            </div>
+            <div class="event_section_left">
+                <div ng-switch="event_status">
+                    <span class="event_states" ng-switch-when="future">
+                        Starts {{ getFormattedStartTime() }}
+                    </span>
+                    <span class="event_states" ng-switch-when="past">
+                        Ended {{ getFormattedEndTime() }}
+                    </span>
+                    <div ng-switch-when="in_progress">
+                        <preloader>Waiting for event to go live.</preloader>
+                    </div>
+                    <div class="time_left" ng-switch-when="countdown" ng-init="startCoundown()">
+                        <span class="clock_icon event_icon"></span>
+                        {{ hour }}<span class="unit">HR</span>
+                        {{ minutes }}<span class="unit">MIN</span>
+                        {{ seconds }}<span class="unit">SEC</span>
+                    </div>
+                </div>
+                <div class="event_name">{{ ::eventData.full_name }}</div>
+                <div class="account_location">
+                    <div class="account_info">
+                        <img  ng-src="{{ ::eventData.owner.profilePicture('thumb_url') }}"/>
+                        {{ ::eventData.owner.full_name }}
+                    </div>
+                    <div class="event_location">
+                        <span class="location_pin_icon event_icon"></span>
+                        Cape Carnaveral, Florida, United States
+                    </div>
+                </div>
+                <a href="" class="get_notified_button button thin_border_button">
+                    GET NOTIFIED
+                </a>
+            </div>
+        </div>
+        <a href="javascript:void(0)" class="image_update_icon ls_tooltip_parent">
+            <span class="ls_tooltip" data-tooltip-text="Edit Background"></span>
+        <a/>
+    </div>
+</section>

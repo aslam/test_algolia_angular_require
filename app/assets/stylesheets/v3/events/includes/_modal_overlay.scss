@@ -1,0 +1,69 @@
+.modal_overlay {
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    opacity: 0;
+    height: 0;
+    @include transition(opacity .5s linear);
+    &.close {
+        @include animate(hide-modal .5s linear 1);
+        height: 0;
+        padding: 0;
+        .modal_overlay_inner {
+            @include transform(scale(0.3), true);
+        }
+    }
+    &.open {
+        opacity: 1;
+        height: 100%;
+         @include animate(show-modal .5s linear 1);
+        .modal_overlay_inner {
+            @include transform(scale(1), true);
+        }
+    }
+}
+
+@include keyframes(show-modal) {
+    0% {
+        opacity: 0;
+        height: 0;
+    }
+    1% {
+        opacity: 0;
+        height: 100%;
+    }
+    10% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        height: 100%;
+    } 
+}
+@include keyframes(hide-modal) {
+    0% {
+        opacity: 1;
+        height: 100%;
+    }
+    40% {
+        opacity: 0;
+    }
+    99% {
+        opacity: 0;
+        height: 100%;
+    }
+    100% {
+        opacity: 0;
+        height: 0;
+    } 
+}
+.modal_overlay_inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    @include transition(all .3s linear);
+    @include transform(scale(0.3), true);
+}

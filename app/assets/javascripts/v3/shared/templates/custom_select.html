@@ -1,0 +1,15 @@
+<div class="custom_select_wrapper {{uniqueClass}}" ng-init="selectedVal = options[0].option; selectedIcon=options[0].imgClass; selectedDescription=options[0].description" >
+	<select ng-model="selectedVal">
+		<option value="{{value.option}}" ng-repeat="value in options" >{{value.option}}</option>
+	</select>
+	<div class="selected_value {{clickable}} selected" ng-click="toggleOptions()">
+		<span class="event_visibility_icon {{selectedIcon}}" ng-if="options[0].imgClass"></span>{{selectedVal}}
+	</div>
+	<p class="selected_value_description" ng-if="options[0].description">{{selectedDescription}}</p>
+	<ul class="custom_select_dropdown {{dropdownClass}}" ng-show="showOptions">
+		<li ng-repeat="value in options" data-index="{{$index}}" ng-click="updateSelection(value.option, value.imgClass, value.description, $index)" ng-class="{selected : (((selectedVal == value.option) && $index == selectedIndex) ||$index == selectedIndex )}">
+			<span class="event_visibility_icon {{value.imgClass}}" ng-if="options[0].imgClass"></span>
+			{{value.option}}
+		</li>
+	</ul>
+</div>

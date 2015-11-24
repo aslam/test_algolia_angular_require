@@ -1,0 +1,48 @@
+input.custom_radio_buttons[type="radio"] {
+    display: none;
+    + label {
+        position: relative;
+        height: 20px;
+        font: 13px/20px $font-extra-bold;
+        color: #000000;
+        padding-left: 26px;
+        margin: 25px 35px 0 0;
+        display: inline-block;
+        &:before {
+            content: '';
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            left: 0;
+            @include border-radius(100%);
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            display: inline-block;
+            vertical-align: middle;
+            @include box-sizing(border-box);
+        }
+    }
+    &:checked {
+        + label {
+            &:before {
+                content: '';
+                border: none;
+                background-color: #4185be;
+                width: 20px;
+                height: 20px;
+            }
+            &:after {
+                content: '';
+                position: absolute;
+                display: inline-block;
+                left: 6px;
+                top: 6px;
+                width: 8px;
+                height: 8px;
+                background-color: #ffffff;
+                z-index: 1;
+                @include border-radius(100%);
+            }
+        }
+    }
+}

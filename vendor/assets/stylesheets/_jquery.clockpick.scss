@@ -1,0 +1,52 @@
+#CP_hourcont {
+    padding: 0px;
+    position:absolute;
+    border:1px solid #bfbfbf;
+    background-color:#f9f9f9;
+    display:none;
+    @include border-radius(5px);
+	z-index:9000;
+}
+
+#CP_minutecont {
+    background-color:#f9f9f9;
+    padding: 0px;
+    position:absolute;
+    width:45px;
+    border: 1px solid #bfbfbf;
+    display:none;
+    @include border-radius(5px);
+z-index:9000;
+}
+
+.floatleft {
+    float:left;
+}
+
+.CP_hour {
+    padding:1px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:9px;
+    white-space:nowrap;
+    cursor:pointer;
+    width:35px;
+    margin:1px;
+    background-color:#f9f9f9;
+z-index:9000;
+}
+
+.CP_minute {
+    padding:1px;
+    background-color:#f9f9f9;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:9px;
+    white-space:nowrap;
+    cursor:pointer;
+    width:auto;
+    margin:1px;
+	z-index:9000;
+}
+
+.CP_over {
+    background-color:#d3e2f0;
+}

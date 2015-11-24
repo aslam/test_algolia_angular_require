@@ -1,0 +1,81 @@
+<h1 class="content_header">Notifications</h1>
+<div class="notification_settings" notification-settings>
+    <div class="row_notification">
+        <div class="header_container">
+            <h2 class="section_header">Notifications from accounts I follow</h2>
+            <h2 class="chkbox_header">Email</h2>
+            <h2 class="chkbox_header">Text</h2>
+        </div>
+        <div class="column_notification_label">
+            <p>New event published</p>
+            <p>Event broadcast begins</p>
+            <p>Status update</p>
+            <p>Photo post</p>
+            <p>Video post</p>
+        </div>
+        <div class="column_checkboxes">
+            <div class="icon_chkbox js-icon_chkbox"></div>
+            <div class="icon_chkbox js-icon_chkbox"></div>
+            <div class="icon_chkbox js-icon_chkbox"></div>
+            <div class="icon_chkbox js-icon_chkbox"></div>
+            <div class="icon_chkbox js-icon_chkbox"></div>
+        </div>
+        <div class="column_checkboxes">
+            <div class="icon_chkbox js-icon_chkbox"></div>
+            <div class="icon_chkbox js-icon_chkbox"></div>
+            <div class="icon_chkbox js-icon_chkbox"></div>
+            <div class="icon_chkbox js-icon_chkbox"></div>
+            <div class="icon_chkbox js-icon_chkbox"></div>
+        </div>
+    </div>
+    <div class="row_notification">
+        <div class="header_container">
+            <h2 class="section_header">Social notifications</h2>
+        </div>
+        <div class="column_notification_label">
+            <p>Someone new follows me on Blahblah</p>
+            <p>My Facebook friend joins Blahblah</p>
+            <p>Someone likes or comments on my post</p>
+        </div>
+        <div class="column_checkboxes">
+            <div class="icon_chkbox js-icon_chkbox"></div>
+            <div class="icon_chkbox js-icon_chkbox"></div>
+            <div class="icon_chkbox js-icon_chkbox"></div>
+        </div>
+        <div class="column_checkboxes">
+            <div class="icon_chkbox js-icon_chkbox"></div>
+            <div class="icon_chkbox js-icon_chkbox"></div>
+            <div class="icon_chkbox js-icon_chkbox"></div>
+        </div>
+    </div>
+    <div class="row_notification">
+        <div class="header_container">
+            <h2 class="section_header">Notifications</h2>
+        </div>
+        <div class="column_notification_label">
+            <p>Daily digest</p>
+            <p>Occassional email updates</p>
+        </div>
+        <div class="column_checkboxes">
+            <div class="icon_chkbox js-icon_chkbox"></div>
+            <div class="icon_chkbox js-icon_chkbox"></div>
+        </div>
+        <div class="column_checkboxes">
+            <div class="icon_chkbox js-icon_chkbox"></div>
+            <div class="icon_chkbox js-icon_chkbox"></div>
+        </div>
+    </div>
+    <div class="row_notification">
+        <div class="header_container">
+            <h2 class="section_header">Mobile Phone #</h2>
+        </div>
+        <div>
+            <span>{{ account.tel_mobile }}</span>
+            <span ng-show="account.is_mobile_verified" class="mobile_verified">Verified</span>
+        </div>
+        <a href="#" class="change_mobile">Change</a>
+    </div>
+    <div class="button_wrapper">
+        <a href="#" class="button btn_save_big"></a>
+    </div>
+</div>

@@ -1,0 +1,152 @@
+.event_section {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    text-align: center;
+    background-color: #000000;
+    @extend %vertical-aligner;
+    .image_update_icon {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+    }
+}
+
+.event_image_blur {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    .blur_poster_wrapper {
+        width: 100%;
+        height: 100%;
+        @include transform2d(translateX(50%) translateY(50%));
+    }
+    .blur_poster {
+        width: 100%;
+        height: 100%;
+        @include transform2d(translateX(-50%) translateY(-50%));
+        @include filter-blur(60px);
+        filter: asset-url('v3/events/blur.svg#blur', svg);
+    }
+}
+
+.event_details {
+    width: 968px;
+    text-align: left;
+    @extend %clearfix;
+    @extend %vertical-align-middle;   
+    line-height: initial;
+}
+.event_section_left {
+    float: left;
+    max-width: 55%;
+    -webkit-font-smoothing: antialiased; 
+    position: relative;
+    .clock_icon {
+        margin-right: 15px;
+    }
+    .time_left {
+        font: 20px/24px $font-extra-bold;
+        color: #ffffff;
+        letter-spacing: 1.11px;
+    }
+    .unit {
+        font: 12px $font-bold;
+        color: #ffffff;
+        margin-right: 5px;
+    }
+    .event_name {
+        font: 42px $font-super-bold;
+        color: #ffffff;
+        margin-bottom: 35px;
+        margin-top: 30px;
+        @include ellipsis;
+    }
+    .account_info {
+        font: 14px $font-extra-bold;
+        color: #ffffff;
+        @extend %vertical-align-middle; 
+        @include ellipsis(60%);
+        img {
+            border: 1px solid rgba(0,0,0,0.10);
+            width: 30px;
+            height: 30px;
+            @include border-radius(100%);
+            vertical-align: middle;
+            margin-right: 12px;
+        }
+    }
+    .event_location {
+      @extend %vertical-align-middle;  
+      margin-left: 40px; 
+      font: 13px/30px $font-bold;
+      color: #ffffff;
+      @extend %vertical-align-middle; 
+      @include flexbox-flex(1);
+      @include ellipsis;
+    }
+    .account_location {
+      margin-bottom: 40px;
+      @include flexbox-display-flex;
+    }
+}
+
+.event_section_right {
+    float: right;
+    max-width: 40%;
+    position: relative;
+    z-index: 1;
+    @extend %vertical-align-middle;   
+    .image_update_icon {
+        top: 5px;
+        right: 5px;
+    }
+    .this_event_poster {
+        @include box-shadow(0 5px 12px 0 rgba(0, 0, 0, 0.5));
+        width: 100%;
+    }
+}
+
+@media screen and (max-width : 980px) {
+    .event_details {
+        padding: 0 40px;
+        width: 100%;
+    }
+    .event_section {
+        font-size: 0;
+    }
+}
+
+@media screen and (max-width : 767px) {
+    .event_details {
+        text-align: center;
+    }
+    .event_section_right {
+        float: none;
+        max-width: 90%;
+        margin-top: 40px;
+    }
+    .event_section_left {
+      max-width: 90%;
+      float: none;
+      margin: 40px auto 0;
+        .event_name {
+            white-space: initial;
+            font: 30px/38px $font-super-bold;
+            margin-bottom: 20px;
+        }
+        .account_info {
+          display: none;
+        }
+        .event_location {
+          margin-left: 0;
+          white-space: nowrap;
+        }
+    }
+    .time_left {
+      margin-bottom: 40px;
+    }
+}

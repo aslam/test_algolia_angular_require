@@ -1,0 +1,49 @@
+<div class="modal_overlay js-create_event_modal">
+    <div class="modal_overlay_inner">
+        <form class="create_event_modal" ng-submit="submit(eventForm)"
+            name="eventForm" novalidate>
+            <div class="create_event_header">
+                <a href="javascript:void(0)" class="modal_close_icon grey_close"></a>
+                <h2 class="heading_title">Create New Event</h2>
+            </div>
+            <div class="create_event_fields">
+                <label for="event_title">Title</label>
+                <input type="text" name="full_name" class="wider" ng-model="full_name"
+                    placeholder="Give it a descriptive name" required/>
+                <p ng-show="eventForm.full_name.$invalid && eventForm.$submitted">
+                    Title cannot be blank
+                </p>
+                <!-- Timezone rendered through css !-->
+                <label for="start" class="dash start_date_label"
+                    data-timezone="Times are in ({{ startTime.zone }})">Starts</label>
+                <div class="date_time_field" id="start_date_wrapper">
+                    <input type="text" ng-model="startTime.date" class="medium"
+                        date-picker display-date="startTime.date" name="start_date"/>
+                    <time-picker hours="startTime.hour" minutes="startTime.minute"
+                        meridian="startTime.meridian">
+                    </time-picker>
+                </div>
+                <p ng-show="eventForm.start_date.$invalid">
+                    Invalid Start Date
+                </p>
+
+                <label for="end" class="dash">Ends</label>
+                <div class="date_time_field">
+                    <input type="text" class="medium" date-picker display-date="endTime.date"
+                        name="end_date" ng-model="endTime.date"/>
+                    <time-picker hours="endTime.hour" minutes="endTime.minute"
+                        meridian="endTime.meridian">
+                    </time-picker>
+                </div>
+                <p ng-show="eventForm.end_date.$invalid">Invalid End Date</p>
+                <p ng-show="eventForm.end_date.$dirty">
+                    End time should be more than start time by a mintue.
+                </p>
+
+                <button type="submit" class="button success_button create_event_button">
+                    Create Event
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="instant_search_wrapper">
+    <div>
+        <input class="instant_search js-search" ng-model="search_query" ng-change="query()" 
+            ng-model-options="{ debounce: 500 }" type="text" id="search_field" 
+            placeholder="Search" autocomplete="off" data-active-name="active"/>
+        <label for="search_field" class="instant_search_label"></label>
+    </div>
+    <div class="js-instant_search_results">
+        <div class="result-header"> Search for "{{ search_query }}"</div> 
+        <div ng-show="hasAccounts()">
+            <h3>Accounts</h3>
+            <ul>
+                <li typeahead-item item-type="account" ng-repeat="account in result.accounts">
+                    <span>{{ ::account.full_name }}</span>
+                </li>
+            </ul>
+        </div>
+        <div ng-show="hasEvents()">
+            <h3>Events</h3>
+            <ul>
+                <li typeahead-item item-type="event" ng-repeat="event in result.events">
+                    <span>{{ ::event.full_name }}</span>
+                </li>
+            </ul>
+        </div>
+        <div ng-show="hasVideos()">
+            <h3>Videos</h3>
+            <ul>
+                <li typeahead-item item-type="video" ng-repeat="video in result.videos">
+                    <span>{{ ::video.caption }}</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Blahblah</title>
+
+    <%= stylesheet_link_tag 'v3/accounts/application' %>
+
+    <meta name="title" content="" />
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= csrf_meta_tag %>
+
+    <base href="/__breeze__/accounts/">
+  </head>
+  <body class="ng-cloak">
+    <%= render partial: '/layouts/v3/shared/header' %>
+    <%= yield %>
+    <%= requirejs_include_tag "ng_accounts/main" %>
+    <!-- // <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.angular.min.js" type="text/javascript"></script> -->
+  </body>
+</html>
+

@@ -1,0 +1,101 @@
+// mixins
+@mixin retina-ready-sprites($file, $type, $normal-sprite-width, $normal-sprite-height) {
+    background-image: asset-url($file + '.' + $type, image);   
+    @media (-moz-min-device-pixel-ratio: 1.5), (-o-min-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 1.5), (min-device-pixel-ratio: 1.5) {
+        & {
+            background-image: asset-url($file + '@2x.' + $type, image);
+            background-size: #{$normal-sprite-width}px #{$normal-sprite-height}px;
+            -moz-background-size: #{$normal-sprite-width}px #{$normal-sprite-height}px;
+            -o-background-size: #{$normal-sprite-width}px #{$normal-sprite-height}px;
+            -webkit-background-size: #{$normal-sprite-width}px #{$normal-sprite-height}px;
+        }
+    }
+}
+
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+@mixin animate($animation) {
+    -webkit-animation: $animation;
+    -moz-animation: $animation;
+    -o-animation: $animation;
+    animation: $animation;
+}
+
+@mixin stop-animation-frame {
+    -webkit-animation-fill-mode: forwards;
+    -moz-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+@mixin ellipsis ($max-width : 100%){
+  display: inline-block;
+  max-width: $max-width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// flexbox
+@mixin flexbox-display-flex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin flexbox-flex($width) {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  width: $width; // Passing our width value here
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+@mixin filter-blur($blur-radius) {
+  filter: blur($blur-radius);
+  -webkit-filter: blur($blur-radius);
+  -moz-filter: blur($blur-radius); 
+  -o-filter: blur($blur-radius); 
+  -ms-filter: blur($blur-radius); 
+}
+// extends
+%vertical-aligner {
+    &:before {
+        content: '';
+        height: 100%;
+        display: inline-block;
+        vertical-align: middle;
+        width: 0;
+    }
+}
+%vertical-align-middle {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@mixin circular_btn ($dimension) {
+  border-radius: 50%;
+  width: $dimension;
+  height: $dimension;
+}

@@ -1,0 +1,219 @@
+%icon {
+    font-family: "SSStandard";
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: none;
+    text-rendering: optimizeLegibility;
+    white-space: nowrap;
+    /*-webkit-font-feature-settings: "liga"; Currently broken in Chrome >= v22. Falls back to text-rendering. Safari is unaffected. */
+    -moz-font-feature-settings: "liga=1";
+    -moz-font-feature-settings: "liga";
+    -ms-font-feature-settings: "liga" 1;
+    -o-font-feature-settings: "liga";
+    font-feature-settings: "liga";
+    -webkit-font-smoothing: antialiased;
+}
+
+$icons:
+	pencil '\270E',
+	cursor '',
+	crosshair '',
+	search '\1F50E',
+	zoomin '',
+	zoomout '',
+	view '',
+	attach '',
+	link '\1F517', 
+	move '',
+	write '\270E',
+	edit '\270E',
+	writingdisabled '',
+	erase '',
+	compose '',
+	lock '\1F512',
+	unlock '',
+	key '',
+	backspace '',
+	ban '\1F6AB',
+	trash '\E0D0',
+	target '\25CE',
+	tag '',
+	bookmark '',
+	flag '',
+	like '',
+	dislike '\1F44E',
+	heart '\2665',
+	halfheart '\E1A0',
+	star '\22C6',
+	halfstar '',
+	sample '',
+	crop '\E201',
+	layers '',
+	fill '',
+	stroke '',
+	phone '\1F4DE',
+	phonedisabled '',
+	rss '\E310',
+	facetime '\E320',
+	reply '',
+	send '',
+	mail '\2709',
+	inbox '',
+	chat '',
+	ellipsischat '',
+	ellipsis '',
+	user '\1F464',
+	femaleuser '',
+	users '',
+	cart '',
+	creditcard '',
+	dollarsign '\1F4B2',
+	barchart '',
+	piechart '',
+	box '',
+	home '',
+	buildings '',
+	warehouse '',
+	globe '\1F30E',
+	navigate '',
+	compass '',
+	signpost '',
+	map '\uE673',
+	location '\E6D0',
+	pin '',
+	database '',
+	hdd '',
+	music '',
+	mic '',
+	volume '',
+	lowvolume '\1F509',
+	highvolume '',
+	airplay '',
+	camera '',
+	picture '',
+	video '\1F4F9',
+	play '\25B6',
+	pause '',
+	stop '\25A0',
+	record '\25CF',
+	rewind '',
+	fastforward '',
+	skipback '',
+	skipforward '',
+	eject '',
+	repeat '',
+	replay '',
+	shuffle '',
+	book '',
+	openbook '',
+	notebook '',
+	newspaper '',
+	grid '',
+	rows '\E9A1',
+	columns '',
+	thumbnails '',
+	filter '',
+	desktop '',
+	laptop '',
+	tablet '',
+	cell '\1F4F1',
+	battery '',
+	highbattery '',
+	mediumbattery '',
+	lowbattery '',
+	emptybattery '',
+	lightbulb '',
+	downloadcloud '',
+	download '\EB01',
+	uploadcloud '',
+	upload '',
+	fork '',
+	merge '',
+	transfer '',
+	refresh '\21BB',
+	sync '\EB82',
+	loading '',
+	wifi '',
+	connection '',
+	file '',
+	folder '',
+	quote '',
+	text '',
+	font '',
+	print '\2399',
+	fax '',
+	list '\ED50',
+	layout '',
+	share '\EE00',
+	redirect '\21AA',
+	expand '\2922',
+	contract '',
+	help '\2753',
+	info '\2139',
+	alert '\26A0',
+	caution '',
+	logout '',
+	plus '\002B',
+	hyphen '\002D',
+	check '\2713',
+	delete '\2421',
+	settings '\2699',
+	dashboard '',
+	notifications '',
+	notificationsdisabled '',
+	clock '',
+	stopwatch '',
+	calendar '',
+	addcalendar '\F070',
+	removecalendar '',
+	checkcalendar '\F072',
+	deletecalendar '',
+	briefcase '',
+	cloud '',
+	droplet '',
+	flask '',
+	up '\2B06',
+	upright '',
+	right '\27A1',
+	downright '',
+	down '\2B07',
+	downleft '',
+	left '\2B05',
+	upleft '',
+	navigateup '\F500',
+	navigateright '\25BB',
+	navigatedown '\F501',
+	navigateleft '\25C5',
+	directup '\25B4',
+	directright '\25B9',
+	directdown '\25BE'
+	dropdown '',
+	directleft '',
+	retweet '';
+
+.ss-icon:before {
+	@extend %icon;
+}
+
+@each $icon in $icons {
+	@if nth($icon, 2) != '' {
+	    .ss-#{nth($icon, 1)}:before {
+	        content: nth($icon, 2);
+	    }
+	}
+}
+
+@mixin symbolset($key) {
+    @each $icon in $icons {
+        @if nth($icon, 1) == $key {
+            content: nth($icon, 2);
+        }
+    }
+}
+
+@mixin icon($icon) {
+    content: "";
+    display: inline-block;
+    @extend %icon;
+    @include symbolset($icon);
+}

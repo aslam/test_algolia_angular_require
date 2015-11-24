@@ -1,0 +1,58 @@
+.custom_select_wrapper {
+    position: relative;
+    select {
+        display: none;
+    }
+    .selected_value {
+        height: 40px;
+        background-image: linear-gradient(-180deg, #FFFFFF 0%, #F7F7F7 100%);
+        border: 1px solid #d9d9d9;
+        @include box-shadow(0px 1px 0px 0px rgba(0,0,0,0.05));
+        border-radius: 2px;
+        font: 15px/40px $font-bold;
+        color: #262626;
+        cursor: pointer;
+        &:after {
+            content: '';
+            width: 0;
+            height: 0;
+            border: 5px solid transparent;
+            border-top: 5px solid #999999;
+            position: absolute;
+            right: 15px;
+            top: 17px;
+            display: block;
+        }
+    }
+    .custom_select_dropdown {
+        position: absolute;
+        width: 100%;
+        top: 42px;
+        background: #FFFFFF;
+        @include box-shadow(0px 0px 2px 0px rgba(0,0,0,0.12), 0px 2px 8px 0px rgba(0,0,0,0.24));
+        border-radius: 3px;
+        z-index: 1;
+        li {
+            border-bottom: 1px solid rgba(0,0,0,0.10);
+            font: 15px/40px $font-bold;
+            color: #000000;
+            cursor: pointer;
+            .help_tip {
+                font: 13px/15px $font-bold;
+                color: #666666;
+            }
+            &:last-child {
+                border-bottom: none;
+            }
+            &.selected {
+                background-color: #f5f5f5;
+            }
+        }
+    }
+    .selected_value_description {
+        padding-top: 15px;
+        color: #666666;
+        font: 13px/18px $font-bold;
+    }
+}
+

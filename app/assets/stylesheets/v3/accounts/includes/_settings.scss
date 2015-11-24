@@ -1,0 +1,437 @@
+ /* Common style for Accounts page header section
+    Will be applicable for screen sizes > 1024 px (Desktop Version)
+*/
+.account_settings {
+
+}
+.settings_menu {
+    width: 30%;
+    float: left;
+    .menu_item_container {
+        position: relative;
+        height: 50px;
+        max-width: 250px;
+        cursor: pointer;
+        &.selected {
+            background-color: #ffffff;
+        }
+    }
+    .menu_item {
+        text-decoration: none;
+        color: #222222;
+        font: 16px/50px $font-bold;
+        margin-left: 55px;
+        &.selected {
+            color: #CF202E;
+        }
+    }
+}
+.settings_content {
+    width: 70%;
+    float: left;
+    .content_header {
+        font: 30px/36px $font-bold;
+        color: #000000;
+        .learn_more_plans {
+            float: right;
+            font: 16px/19px $font-bold;
+            color: #4185BE;
+            margin-top: 10px;
+        }
+    }
+    .footer_links {
+        margin-top: 48px;
+        width: 100%;
+        max-width: 600px;
+    }
+}
+.edit_info {
+    margin-top: 5px;
+    .fields {
+        margin-top: 30px;
+        width: 100%;
+        max-width: 600px;
+        > p {
+            font: 15px/18px $font-extra-bold;
+            color: #262626;
+            .char_limit {
+                font: 12px/14px $font-bold;
+                color: #999999;
+                float: right;
+            }
+        }
+
+        > input {
+            height: 40px;
+            width: 100%;
+            margin-top: 10px;
+            background: #FFFFFF;
+            border: 1px solid #D9D9D9;
+            border-radius: 2px;
+            color: #000000;
+            font: 16px/24px $font-bold;
+            text-indent: 12px;
+        }
+        .edit_box {
+            height: 225px;
+            margin-top: 10px;
+            width: 100%;
+            background: #FFFFFF;
+            border: 1px solid #D9D9D9;
+            border-radius: 2px;
+            outline: none;
+            color: #000000;
+            font: 14px/24px $font-bold;
+            padding: 15px;
+            overflow: auto;
+        }
+    }
+    .connections_container {
+        width: 100%;
+        max-width: 600px;
+        max-height: 70px;
+        padding: 15px 0;
+        margin-top: 15px;
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        @extend %clearfix;
+    }
+}
+
+.delete_account_link {
+    font: 13px/40px $font-bold;
+    color: #CF202E;
+    text-decoration: none;
+}
+.pull_right {
+    float: right;
+}
+.help {
+    &:after {
+        content: 'help';
+        font: 12px/15px $font-bold;
+        color: #CCCCCC;
+        margin-left: 7px;
+        cursor: pointer;
+    }
+}
+.notification_settings {
+    .row_notification {
+        margin-top: 60px;
+        @extend %clearfix;
+        &:first-child {
+            margin-top: 37px;
+        }
+    }
+    .header_container {
+        width: 100%;
+        @extend %clearfix;
+        .section_header {
+            font: 15px/18px $font-extra-bold;
+            color: #262626;
+            text-align: left;
+            width: 300px;
+            float: left;
+        }
+        .chkbox_header {
+            font: 13px/16px $font-extra-bold;
+            width: 35px;
+            text-align: left;
+            margin-left: 55px;
+            float: left;
+        }
+    }
+
+    .column_notification_label {
+        float: left;
+        width: 300px;
+        text-align: left;
+        p {
+            font: 16px/19px $font-normal;
+            color: #262626;
+            padding-top: 20px;
+        }
+    }
+    .column_checkboxes {
+        float: left;
+        width: 35px;
+        margin-left: 60px;
+        .icon_chkbox {
+            width: 18px;
+            height: 18px;
+            background: #FFFFFF;
+            border: 1px solid #DDDDDD;
+            border-radius: 2px;
+            margin-top: 23px;
+            cursor: pointer;
+        }
+        .icon_chkbox_checked {
+            width: 18px;
+            height: 18px;
+            margin-top: 23px;
+            @include retina-ready-sprites(v3/account/account_sprite, png, 81, 175);
+            background-repeat: no-repeat;
+            background-position: -2px -157px;
+            cursor: pointer;
+        }
+    }
+    .button_wrapper {
+        margin-top: 35px;
+    }
+    .mobile_verified {
+        text-transform: uppercase;
+        font: 13px/18px $font-extra-bold;
+        color: #6DC067;
+        margin-left: 40px;
+        letter-spacing: 1px;
+        &:before {
+            @include retina-ready-sprites(v3/account/account_sprite, png, 81, 175);
+            background-repeat: no-repeat;
+            background-position: -24px -157px;
+            width: 10px;
+            height: 8px;
+        }
+    }
+    .change_mobile {
+        font: 13px/16px $font-bold;
+        color: #4185BE;
+        margin-top: 10px;
+    }
+}
+.plans_wrapper {
+    margin-top: 25px;
+    .plan_container {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 30px 30px 50px 30px;
+        @extend %clearfix;
+        &.active {
+            background: #FFFFFF;
+            border-left: 1px solid rgba(0, 0, 0, 0.1);
+            border-right: 1px solid rgba(0, 0, 0, 0.1);
+            border-radius: 3px;
+            &:last-child {
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+    .plan_details {
+        float: left;
+    }
+    .plan_button_container {
+        float: right;
+        text-align: center;
+        .custom_pricing {
+            font: 18px/18px $font-extra-bold;
+            color: #222222;
+        }
+        .custom_pricing_phone {
+            font: 13px/22px $font-extra-bold;
+            color: #222222;
+            margin-bottom: 33px;
+        }
+    }
+    .plan_title {
+        font: 30px/36px $font-normal;
+        color: #000000;
+        position: relative;
+        .most_popuplar_plan {
+            display: inline-block;
+            text-transform: uppercase;
+            text-align: center;
+            width: 115px;
+            height: 20px;
+            font: 11px/20px $font-extra-bold;
+            letter-spacing: 0.37px;
+            margin-left: 15px;
+            background-color: #6DC067;
+            color: #FFFFFF;
+            position: absolute;
+            top: 8px;
+        }
+    }
+    .plan_features {
+        margin-top: 12px;
+        p {
+            font: 16px/19px $font-normal;
+            color: #262626;
+            margin-top: 25px;
+            &:first-child {
+                margin-top: 0;
+            }
+        }
+    }
+    .btn_plan_price {
+        @include border-radius(3px);
+        width: 160px;
+        height: 34px;
+        border: 2px solid #222222;
+        font: 16px/34px $font-bold;
+        color: #666666;
+        text-transform: none;
+        &.free {
+            letter-spacing: 1.14px;
+            text-transform: uppercase;
+        }
+        &.active {
+            background-color: #6DC067;
+            color: #ffffff;
+            border: none;
+            &:before {
+                @include icon(check);
+                position: relative;
+                top: 2px;
+                margin-right: 10px;
+            }
+            span {
+                color: #FFFFFF;
+            }
+        }
+    }
+    .plan_price {
+        color: #222222;
+        font: 16px/18px $font-extra-bold;
+    }
+    .btn_plan_annual_price {
+        @include border-radius(3px 3px 0 0);
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        width: 160px;
+        height: 60px;
+        border: 2px solid #222222;
+        font: 16px/34px $font-bold;
+        color: #666666;
+        text-transform: none;
+        margin-top: 15px;
+        .annual {
+            font: 14px/20px $font-bold;
+            color: #666666;
+        }
+    }
+    .btn_discount {
+        @include border-radius(0 0 3px 3px);
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        width: 160px;
+        height: 20px;
+        border: 2px solid #222222;
+        background-color: #222222;
+        color: #CCCCCC;
+        font: 11px/13px $font-extra-bold;
+        text-transform: uppercase;
+    }
+}
+.billing_wrapper {
+    margin-top: 25px;
+    .info_section {
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 30px 0;
+        .info {
+            font: 16px/24px $font-bold;
+            color: #666666;
+        }
+    }
+    .section_title {
+        font: 15px/18px $font-extra-bold;
+        color: #262626;
+    }
+    .plan_details {
+        margin-top: 14px;
+        .billing_plan {
+            font: 34px/41px $font-normal;
+            color: #222222;
+        }
+        .billing_plan_period {
+            text-transform: uppercase;
+            font: 12px/14px $font-extra-bold;
+            color: #999999;
+            letter-spacing: 0.92;
+            margin-left: 16px;
+        }
+        .billing_plan_renewal {
+            font: 16px/24px $font-bold;
+            color: #666666;
+        }
+    }
+    .btn_upgrade_plan {
+        width: 150px;
+        height: 30px;
+        background-color: #4185BE;
+        color: #FFFFFF;
+        font: 13px/30px $font-extra-bold;
+        margin-top: 20px;
+    }
+    .billing_details {
+        margin-top: 18px;
+        p {
+            font: 16px/36px $font-bold;
+            color: #666666;
+        }
+    }
+    .edit_link {
+        display: block;
+        font: 13px/33px $font-bold;
+        color: #4185BE;
+    }
+    .payment_section_title {
+        text-transform: uppercase;
+        font: 12px/14px $font-extra-bold;
+        color: #999999;
+        padding-bottom: 5px;
+    }
+    .credit_card {
+        margin-top: 20px;
+    }
+    .voucher_code {
+        margin-top: 20px;
+        .redeemed_on {
+            font: 13px/24px $font-bold;
+            color: #666666;
+        }
+    }
+    .edit {
+        margin-top: 20px;
+        input {
+            height: 40px;
+            margin-top: 10px;
+            background: #FFFFFF;
+            border: 1px solid #D9D9D9;
+            border-radius: 2px;
+            color: #000000;
+            font: 16px/24px $font-bold;
+            text-indent: 12px;
+            margin-right: 20px;
+            &.firstname, &.lastname {
+                width: 295px;
+            }
+            &.street {
+                width: 440px;
+            }
+            &.suite {
+                width: 150px;
+            }
+            &.locality {
+                width: 315px;
+            }
+            &.city, &.country {
+                width: 277px;
+            }
+            &.zip {
+                width: 115px;
+            }
+            &.phone {
+                width: 185px;
+            }
+            &.card_number {
+                width: 294px;
+            }
+            &.expires_on, &.cvv {
+                width: 98px;
+            }
+        }
+        .credit_card_edit {
+            margin-top: 50px;
+        }
+    }
+}

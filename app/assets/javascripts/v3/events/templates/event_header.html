@@ -1,0 +1,115 @@
+<section class="event_toolbar event_status" ng-class="event_status">
+    <div class="account_event_name">
+        {{ ::eventData.owner.full_name }} - {{ ::eventData.full_name }}
+    </div>
+    <div class="toolbar_right_icons">
+        <a href="" class="event_icon like_icon"></a>
+        <a href="" class="event_icon share_icon" data-toggle-dropdown
+            data-show-class="open" data-hide-class="close" data-active-name="active"
+            data-toggle-element=".js-share_modal" data-no-hide-on-popup-click="true"
+            data-close-class="modal_close_icon">
+        </a>
+        <a href="" class="event_icon info_icon ls_tooltip_parent" data-toggle-dropdown
+            data-show-class="open" data-hide-class="close" data-active-name="active"
+            data-toggle-element=".js-event_info_modal" data-no-hide-on-popup-click="true"
+            data-close-class="modal_close_icon">
+            <span class="ls_tooltip" data-tooltip-text="About"></span>
+        </a>
+        <a href="" class="event_icon list_all_icon ls_tooltip_parent">
+            <span class="ls_tooltip" data-tooltip-text="Event Posts"></span>
+        </a>
+        <a ng-if="is_owner" href="" class="event_icon video_icon ls_tooltip_parent">
+            <span class="ls_tooltip" data-tooltip-text="Live Video Tools"></span>
+        </a>
+        <a ng-if="is_owner" href="" class="event_icon edit_icon ls_tooltip_parent">
+            <span class="ls_tooltip" data-tooltip-text="Add Post"></span>
+        </a>
+        <a ng-if="is_owner" href="" class="event_icon settings_icon ls_tooltip_parent">
+            <span class="ls_tooltip" data-tooltip-text="Settings"></span>
+        </a>
+        <div ng-if="is_owner" class="ls_tooltip_parent publish_button">
+            <a href="" class="publish_link" data-toggle-dropdown data-show-class="open" data-hide-class="close" data-toggle-element=".js-event_visibility_modal" data-no-hide-on-popup-click="true" data-close-class="modal_close_icon">PUBLISH</a>
+            <span class="ls_tooltip_text" data-tooltip-heading-text="WHEN YOU'RE READY..." data-tooltip-body-text="Publish your event so people can see it!">
+                <span class="top_Caret"></span>
+                <span class="close_icon_medium grey_close"></span>
+            </span>
+        </div>
+    </div>
+    <div class="modal_overlay js-event_info_modal">
+        <div class="modal_overlay_inner">
+            <div class="event_info_modal">
+                <a href="javascript:void(0)" class="modal_close_icon white_close"></a>
+                <div class="info_modal_header">
+                    <div class="info_modal_image_wrapper">
+                        <img class="info_modal_image" ng-src="{{ ::eventData.owner.background.image.small_url }}"/>
+                    </div>
+                    <div class="modal_title">
+                        <h2>{{ ::eventData.full_name }} <span class="event_happening_date">{{ showTime() }}</span></h2>
+                    </div>
+                </div>
+                <div class="info_modal_content">
+                    <div class="owner_account">
+                        <div class="rounded_following_icon"></div>
+                        <img ng-src="{{ ::eventData.owner.profilePicture('thumb_url') }}"/>
+                        <div class="owner_account_name">{{ ::eventData.owner.full_name }}</div>
+                        <div class="num_of_events_followers">
+                            <span class="num_of_events">
+                                {{ ::eventData.owner.eventCount() }} events
+                            </span>
+                            {{ ::eventData.owner.followersCount() }} followers
+                        </div>
+                    </div>
+                    <p>
+                        {{ ::eventData.description }}
+                        <br/>
+                        <span ng-if="eventData.links().length > 0" class="check_out_more">
+                            Check out more at
+                            <a ng-repeat="link in eventData.links()"
+                                href="{{ ::link.url }}" class="description_anchor">
+                                    {{ ::link.title }}
+                            </a>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- who can see modal -->
+    <div class="modal_overlay js-event_visibility_modal">
+        <div class="modal_overlay_inner">
+            <div class="event_visibility_modal">
+                <div class="event_visibility_header">
+                    <a href="javascript:void(0)" class="modal_close_icon grey_close"></a>
+                    <h2 class="heading_title">Who can see it?</h2>
+                </div>
+                {{selectedVal}}
+                <div class="event_visibility_content">
+                    <custom-select data-options="[
+                    {option : 'Public', imgClass : 'public_icon', description : 'Anyone on or off Blahblah can share and see your event.'},
+                    { option : 'Unlisted' , imgClass : 'unlisted_icon', description : 'Only people you share a link with can see your event.'},
+                    { option : 'Invite Only', imgClass : 'invite_only_icon', description : 'Only people you share a link with can see your event.'}]" clickable="js-selected_value" dropdown-class="js-select_visibility">
+                    </custom-select>
+                    <h3 class="category_heading">Category <a class="show_tips_icon" href="javascript:void(0)" data-description="Categorizing your public event will help it get discovered on Blahblah"></a></h3>
+                    <custom-select data-options="[{option : 'Select Category'},{ option : 'Animals'},{ option : 'Business'}]" clickable="js-selected_category" dropdown-class="js-select_category_dropdown" unique-class="select_category">
+                    </custom-select>
+                    <a class="button success_button lets_go_button" href="">Let's Go!</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- who can see modal ends -->
+
+    <!-- share modal -->
+    <div class="modal_overlay js-share_modal">
+        <div class="modal_overlay_inner">
+            <div class="share_modal">
+                <div class="share_modal_header">
+                    <a href="javascript:void(0)" class="modal_close_icon grey_close"></a>
+                    <h2 class="heading_title">Share</h2>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- share modal ends -->
+</section>

@@ -1,0 +1,213 @@
+# you shouldn't specify baseUrl in your requirejs.yml. The gem provides the correct value for this parameter internally.
+#baseUrl: /assets
+
+# all RequireJS top level modules should (ideally) be under the 'blahblah/modules' folder/namespace
+
+modules:
+  - name: "application"
+  - name: "root_application"
+  # A lot more go here
+
+  # All v3 modules should be added below
+  - name: "ng_accounts/main"
+  - name: "ng_events/application"
+
+paths:
+
+  domready: "requirejs/domReady-2.0.1"
+  jquery.waypoints2: "jquery/jquery.waypoints-2.0.2"
+  underscore.module: "underscore"
+  underscore.string: "underscore/underscore.string-2.3.0-amd"
+  underscore.inflection : "underscore/underscore.inflection-1.0.0"
+  socket.io: "socketio/socket.io-0.9.10"
+
+  # plugins
+  jquery: "jquery/jquery-1.8.3"
+  text: "requirejs/text-2.0.5"
+  moment: "moment/moment-2.9.0"
+  moment.timezone: "moment/moment-timezone-0.3.1"
+  underscore: "underscore/underscore-1.4.4-amd"
+  backbone: "backbone/backbone-0.9.10-amd-blahblah"
+  backbone.relational: "backbone/backbone-relational-0.8.0-blahblah"
+  backbone.stickit: "backbone/backbone-stickit-0.6.3-amd"
+  backbone.validation: "backbone/backbone-validation-0.9.1-amd"
+  backbone.syphon: "backbone/backbone-syphon-0.4.1-keysonly-amd"
+  backbone.advice: "backbone/backbone-advice-1.0.0"
+  jquery.rails: "jquery/jquery.rails"
+  jquery.ui: "jquery/jquery.ui-1.9.2"
+  jquery.clickoutside: "jquery/jquery.clickoutside-1.1"
+  jquery.cookie: "jquery/jquery.cookie-1.3"
+  jquery.countdown: "jquery/jquery.countdown-1.6.1"
+  jquery.fancybox: "jquery/jquery.fancybox"
+  jquery.flexslider: "jquery/jquery.flexslider-2.1"
+  jquery.jscrollpane: "jquery/jquery.jscrollpane-2.0.0"
+  jquery.nicescroll: "jquery/jquery.nicescroll"
+  jquery.nicescroll.plus: "jquery/jquery.nicescroll.plus"
+  jquery.scrollable: "jquery/jquery.scrollable-1.2.7"
+  jquery.timeago: "jquery/jquery.timeago-0.9.3"
+  jquery.typeahead: "jquery/jquery.typeahead"
+  jquery.validate: "jquery/jquery.validate"
+  jquery.colorpicker: "jquery/jquery.colorpicker-1.0.2"
+  jquery.tools: "jquery/jquery-tools"
+  jquery.spin: "jquery/jquery.spin"
+  jquery.recurly:  "jquery/jquery.recurly"
+  jquery.payment: "jquery/jquery.payment"
+  jquery.mousewheel: "jquery/jquery.mousewheel"
+  jquery.jcountdown: "jquery/jquery.jcountdown"
+  jquery.masonry: "jquery/jquery.masonry"
+  jquery.debounce: "jquery/jquery.debounce"
+  jquery.debouncedresize: "jquery/jquery.debouncedresize"
+  jquery.color: "jquery/jquery.color"
+  jquery.tipsy: "jquery/jquery.tipsy"
+  jquery.appear: "jquery/jquery.appear-0.3.3"
+  jquery.easing: "jquery/jquery.easing-1.3"
+  jquery.jcrop: "jquery/jquery.jcrop-0.9.12"
+  jquery-autoresize: "jquery/jquery-autoresize"
+  jquery.maphilight: "jquery/jquery.maphilight.min"
+  jquery.timezone-picker: "jquery/jquery.timezone-picker"
+  jquery.velocity: "jquery/jquery.velocity-0.0.22"
+  jquery.event.move : "jquery/jquery.event.move"
+  jquery.event.swipe : "jquery/jquery.event.swipe"
+  jquery.slides : "jquery/jquery.slides"
+  jquery.fullpage : "jquery/jquery.fullpage"
+  jquery.bxslider : "jquery/jquery.bxslider"
+  jquery.lazy : "jquery/jquery.lazy"
+  spin: "spin"
+  adroll: "adroll"
+  chartbeat: "chartbeat"
+  twitter: "twitter"
+  jshashtable: "jquery/jquery.jshashtable-2.1"
+  numberformatter: "jquery/jquery.numberformatter-1.2.3"
+  swfobject: "plugins/swfobject"
+  swfupload: "swfupload"
+  swfupload.amd: "swfupload/swfupload-2.5.0-beta3.2-amd"
+  lazyload: "plugins/lazyload"
+  popover: "plugins/popover"
+  easySlider: "plugins/easySlider1.7"
+  easing: "easing"
+  state.machine: "state-machine-2.2.0-amd"
+  user_timezone: 'user_timezone'
+  timezone: 'timezone'
+  algolia_search: 'algoliasearch'
+  jquery.timepicker: 'jquery/jquery.timepicker'
+  jquery.dotdotdot: 'jquery/jquery.dotdotdot'
+  jquery.touchswipe : 'jquery/jquery.touchswipe'
+  smooth_scroll: 'smooth_scroll'
+  modernizr: "modernizr-2.6.2"
+  spin: "spin-1.2.8"
+
+  # All v3 related js should come here, segregating will help in clean up later on
+  angular: "v3/angular/angular-1.4.6"
+  angular.routes: "v3/angular/modules/angular-route-1.4.6"
+  angular.cookies: "v3/angular/modules/angular-cookies"
+  angular.ellipsis: "v3/angular/modules/angular-ellipsis"
+  angular.infiniteScroll: "v3/angular/modules/angular-infiniteScroll"
+  angular.uiRouter: "v3/angular/modules/angular-ui-router-0.2.15"
+  angular.algoliaSearch: "v3/angular/modules/angular-algoliasearch"
+  ng_accounts: "v3/accounts"
+  ng_events: "v3/events"
+  ng_shared: "v3/shared"
+  ng_base: "v3/shared/base_modules"
+  pikaday: 'v3/pikaday'
+
+shim:
+  jquery.rails:
+    deps: ["jquery"]
+  jquery.ui:
+    deps: ["jquery"]
+  jquery.clickoutside:
+    deps: ["jquery"]
+  jquery.cookie:
+    deps: ["jquery"]
+  jquery.countdown:
+    deps: ["jquery"]
+  jquery.fancybox:
+    deps: ["jquery"]
+  jquery.flexslider:
+    deps: ["jquery"]
+  jquery.jscrollpane:
+    deps: ["jquery"]
+  jquery.nicescroll:
+    deps: ["jquery"]
+  jquery.nicescroll.plus:
+    deps: ["jquery"]
+  jquery.scrollable:
+    deps: ["jquery"]
+  jquery.timeago:
+    deps: ["jquery"]
+  jquery.typeahead:
+    deps: ["jquery"]
+  jquery.validate:
+    deps: ["jquery"]
+  jquery.colorpicker:
+    deps: ["jquery"]
+  jquery.tools:
+    deps: ["jquery"]
+  jquery.spin:
+    deps: ["jquery"]
+  jquery.recurly:
+    deps: ["jquery"]
+  jquery.mousewheel:
+    deps: ["jquery"]
+  jquery.jcountdown:
+    deps: ["jquery"]
+  jquery.masonry:
+    deps: ["jquery"]
+  jquery.debounce:
+    deps: ["jquery"]
+  jquery.color:
+    deps: ["jquery"]
+  jquery.waypoints2:
+    deps: ["jquery"]
+  jquery.debouncedresize:
+    deps: ["jquery"]
+  jquery.appear:
+    deps: ["jquery"]
+  jquery.slides:
+    deps: ["jquery"]
+  numberformatter:
+    deps: ["jshashtable"]
+  algolia_search:
+    deps: ["jquery.typeahead"]
+  plax:
+    deps: ["jquery"]
+  rotate:
+    deps: ["jquery"]
+  easing:
+    deps: ["jquery"]
+  jquery.tipsy:
+    deps: ["jquery"]
+  chrome_cast:
+    deps: ["jquery"]
+  jquery.fullpage:
+    deps: ["jquery"]
+  jquery.timepicker:
+    deps: ["jquery"]
+  textarea_resize:
+    deps: ["jquery.ui"]
+  jquery.dotdotdot:
+    deps: ["jquery"]
+  jquery.bxslider:
+    deps: ["jquery"]
+  jquery.calendarpicker:
+    deps: ["jquery"]
+  jquery.touchswipe:
+    deps: ["jquery"]
+  jquery.lazy:
+    deps: ["jquery"]
+  angular:
+    exports: "angular"
+  angular.cookies:
+    deps: ["angular"]
+  angular.routes:
+    deps: ["angular"]
+  angular.ellipsis:
+    deps: ["angular"]
+  pikaday:
+    deps: ["moment"]
+  angular.infiniteScroll:
+    deps: ["angular"]
+  angular.uiRouter:
+    deps: ["angular"]
+  angular.algoliaSearch:
+    deps: ["angular"]

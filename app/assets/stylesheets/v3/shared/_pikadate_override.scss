@@ -1,0 +1,31 @@
+.pika-button {
+	text-align: center;
+	background: #ffffff;
+	color: #333333;
+	font: 14px $font-bold;
+	&:hover {
+		background: $highlight-color;
+	}
+}
+.is-selected {
+	.pika-button {
+		background: $highlight-color;
+		@include box-shadow(none);
+	}
+}
+.pika-single {
+	.pika-label{
+		font: 16px $font-bold;
+	}
+	display: none;
+	&.show {
+		display: block;
+	}
+}
+.pika-lendar {
+	abbr {
+		cursor: default;
+		font: 12px $font-bold;
+		color: #222222;
+	}
+}

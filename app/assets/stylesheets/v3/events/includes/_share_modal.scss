@@ -1,0 +1,23 @@
+.share_modal {
+    width: 600px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    @include transform2d(translate(-50%, -50%));
+}
+.share_modal_header {
+    height: 120px;
+    @include border-radius(5px 5px 0 0);
+    background: #f4f4f4;
+    @include box-shadow(0px 1px 0px 0px rgba(0,0,0,0.10));
+    padding-top: 40px;
+    text-align: center;
+    .heading_title {
+        font: 28px/33px $font-bold;
+        color: #000000;
+        margin-bottom: 10px;
+    }
+}
+.share_modal_tabs {
+    display: inlne-block;
+}

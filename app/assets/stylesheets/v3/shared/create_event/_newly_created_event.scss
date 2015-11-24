@@ -1,0 +1,112 @@
+.newly_created_event {
+    + .event_section {
+        display: none;
+    }
+    .add_location {
+        font: 13px/18px $font-bold;
+        color: #ffffff;
+        border-bottom: 1px dashed #ffffff;
+        text-decoration: none;
+    }
+    .add_description {
+        .add_description_link {
+            font: 16px/22px $font-bold;
+            color: #ffffff;
+            opacity: 0.8;
+            text-decoration: none;
+            border-bottom: 1px dashed #ffffff;
+            }
+        margin-top: -15px;
+        display: block;
+        width: 118px;
+        white-space: nowrap;
+        position: relative;
+        .ls_tooltip_text {
+            white-space: normal;
+            width: 355px;
+            left: 0;
+            @include transform(translateX(0));
+        }
+        .top_Caret {
+            right: auto;
+            left: 35px;
+        }
+    }
+    .add_event_image {
+        width: 368px;
+        height: 210px;
+        background: rgba(255,255,255,0.50);
+        border: 2px dashed #FFFFFF;
+        opacity: 0.4;
+        max-width: 100%;
+    }
+    .event_section_right {
+        position: relative;
+        cursor: pointer;
+        .image_update_icon {
+            left : 50%;
+            top: 64px;
+            margin-left: -25px;
+            &:after {
+                content : 'Add Event Image';
+                color: #ffffff;
+                font: 20px/24px $font-extra-bold;
+                display: block;
+                width: 368px;
+                position: absolute;
+                left: -155px;
+                top: 40px;
+                text-align: center;
+                -webkit-font-smoothing: antialiased;
+            }
+        }
+    }
+}
+
+.add_event_description_modal {
+    width: 485px;
+    height: 210px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    @include box-shadow(0px 1px 0px 0px rgba(0,0,0,0.10));
+    @include transform2d(translate(-50%, -50%));
+    background-color: #ffffff;
+    @include border-radius(5px);
+    -webkit-font-smoothing: antialiased;
+    .modal_close_icon {
+        top: 18px;
+        right: 16px;
+        position: absolute;
+    }
+    .bottom_strip {
+        background: #F4F4F4;
+        @include box-shadow(0px -1px 0px 0px rgba(0,0,0,0.10));
+        width: 485px;
+        height: 55px;
+        position: absolute;
+        bottom: 0;
+        @include border-radius(0 0 5px 5px);
+        text-align: right;
+        .info_button {
+            line-height: 36px;
+            margin: 9px 16px 10px 30px;
+        }
+        .cancel_description {
+            font: 15px/18px $font-extra-bold;
+            color: #999999;
+            text-decoration: none;
+        }
+    }
+    .description_field {
+        width: 100%;
+        height: 155px;
+        padding: 30px 25px 20px;
+        border: 0;
+        @include border-radius(5px 5px 0 0);
+        resize: none;
+        font: 15px/18px $font-bold;
+        color: #262626;
+    }
+}
